@@ -1,0 +1,67 @@
+
+"""
+@app.route('/', methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        """"""
+            Within index.html there should be a post form, that is
+            designed to take inputs from the user and those inputs
+            should be (I don't know at the moment), but flask should
+            recieve the book that the user decided to rent, and it
+            should then redirect to display provided with the book
+            infomation and also updating the database to confirm
+            that someone has rented a book and there's one less copy
+            of it.
+        """"""
+        return redirect(url_for('display')) #this will display it, as well as pass a Book Information
+    else: #our gets
+        """"""
+            This section should work with the database to creates
+            a list of Books, and pushes within
+            render_template function, and showcase it using jinja
+            on a html file.
+        """"""
+        return render_template("index.html" )
+
+
+@app.route('/display', methods=["GET"])
+def display():
+
+
+
+    """"""
+        This is very simple, more or less what it's doing is acting as a receipt window to confirm
+        to the user that everything is ok, and he's good to take the book home.
+
+         More or Less this is tricky, because I don't have a concise way of passing data here,
+         unless I add an parameter and set it to null by default, meaning that this page only
+         exist whenever the main page has a result to display, but first I need to understand
+         how to implement SQL
+
+    """"""
+    return render_template("display.html") #
+
+@app.route('/admin', methods=["GET", "POST"])
+def admin():
+    """"""
+    This is a bit interesting, we want to be able
+    learn how to use POST or UPDATE through request
+    this I really don't have a concise understanding but we can hack something
+    and ask for advice for people who understand flask.
+
+    But basically here we should have a page that is able to
+    add new books, this is really easy to do just create
+    a layout for the admin to do that, however in order for him
+    to delete books we need to showcase a list of books he can
+    delete or choose this is something I'm a bit stuck at understanding..
+
+    :return:
+    """"""
+
+    if request.method == "POST":
+
+    elif request.method == "UPDATE":
+
+    else:
+        return render_template("admin.html")
+"""
