@@ -1,12 +1,13 @@
 # MiniProject-Dehackathon1
-MiniProject for Dehackathon1
-
 Tech Stack:
-Backend: Flask
-Data/Database: sqlite(atm) but postgress later
-Frontend: ReactJs
+Backend: Flask/Python (3.7)
+Data/Database: SQL/sqlite will move to postgress
+Frontend: React/JS
 
-Piping Flask && ReactJS,
+Piping Flask && Data?
+SqlAlchemy works well
+
+Piping Flask && ReactJS?
 unsure yet but I believe Axios in react or something
 similar will work.
 
