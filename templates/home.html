@@ -32,6 +32,17 @@
 
         <div class="row bookrow">
             <div class="col-lg-12">
+                {% for book in book_list %}
+                <div class="book-catalog">
+                    <img src="/static/Practical HTML5 Project.jpg" class="catalog-img"/>
+                    <p class ="book-caption">{{ book.title }}</p>
+                    <p class="copies"> {{ book.copies }}  Available</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+                </div>
+                {% endfor %}
+
+
+                <!--
                 <div class="book-catalog">
                     <img src="/static/Practical HTML5 Project.jpg" class="catalog-img"/>
                     <p class ="book-caption">Practical HTML5 Project</p>
@@ -58,7 +69,8 @@
                     <p class ="book-caption">The Field Guide to UX Strategy</p>
                     <p class="copies"> 2 of 30 Avialable</p>
                     <a href="#" class="borrow-link">Borrow</a>
-                </div>
+
+                </div>-->
             </div>
         </div>
 
