@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title%}Welcome{% endblock %}
+
+{% block content %}
+    <div class="container-fluid landing-wrapper">
+        <div class="row landing-search">
+            <div class="col-lg-12">
+                <input type ="search" placeholder="Search..." class="landing-searchbox">
+            </div>
+        </div>
+        <div class="row landing-caption">
+            <div class="col-lg-6">
+                <p>Welcome to Coffee Shop Community Library</p>
+                <p>Borrow Books. Return <span class="emp">Whenever!</span></p>
+                <input class="landing-submit" type ="submit" value="View Catalog"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid catalog">
+        <div class="row category">
+            <div class="col-lg-12 category-col">
+                <ul class="category-ul">
+                    <li class="category-list">All Categories</li>
+                    <li class="category-list">Business & Economics</li>
+                    <li class="category-list">Web Design</li>
+                    <li class="category-list">Marketing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row bookrow">
+            <div class="col-lg-12">
+                {% for book in book_list %}
+                <div class="book-catalog">
+                    <img src="/static/Practical HTML5 Project.jpg" class="catalog-img"/>
+                    <p class ="book-caption">{{ book.title }}</p>
+                    <p class="copies"> {{ book.copies }}  Available</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+                </div>
+                {% endfor %}
+
+
+                <!--
+                <div class="book-catalog">
+                    <img src="/static/Practical HTML5 Project.jpg" class="catalog-img"/>
+                    <p class ="book-caption">Practical HTML5 Project</p>
+                    <p class="copies"> 2 of 30 Avialable</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+                </div>
+
+                <div class="book-catalog">
+                    <img src="/static/9780135188149_TestBank.jpg" class="catalog-img"/>
+                    <p class ="book-caption">Database Concepts</p>
+                    <p class="copies"> 2 of 30 Avialable</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+                </div>
+
+                <div class="book-catalog">
+                    <img src="/static/51dJUT+jlML._SL500_.jpg" class="catalog-img"/>
+                    <p class ="book-caption">Web Design for Dummies</p>
+                    <p class="copies"> 2 of 30 Avialable</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+                </div>
+
+                <div class="book-catalog">
+                    <img src="/static/the-book.png" class="catalog-img"/>
+                    <p class ="book-caption">The Field Guide to UX Strategy</p>
+                    <p class="copies"> 2 of 30 Avialable</p>
+                    <a href="#" class="borrow-link">Borrow</a>
+
+                </div>-->
+            </div>
+        </div>
+
+        <div class="row catalog-submit">
+            <div class="col-lg-12 catalogsubmit-col">
+                <input type ="submit" class="catalogsubmit-input" value="See More Books">
+            </div>
+        </div>
+    </div>
+{% endblock %}
