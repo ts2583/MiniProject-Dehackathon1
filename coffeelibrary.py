@@ -24,15 +24,17 @@ def home():
     return render_template("home.html", book_list = books)
 
 
-@app.route("/reciept", methods=["GET", "POST"])
+@app.route("/receipt", methods=["GET", "POST"])
 def receipt():
-
-    return render_template("admin.html")
+    #The below code is just a hard-coded example for testing purposes
+    return render_template("receipt.html", title="Harry Potter",
+                           author="JK Rowling", year=1996, isbn="abcd1234",
+                           quantity=3)
 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
 
-    return render_template("admin.html")
+    return render_template("admin_form.html")
 
 
 class Book(db.Model):
